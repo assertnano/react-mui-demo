@@ -1,13 +1,8 @@
-// import Drawer from '@mui/material/Drawer';
 import Toolbar from '@mui/material/Toolbar';
 import MenuItems from './MenuItems';
 import Box from '@mui/material/Box/Box';
 import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 
 const drawerWidth = 240;
@@ -49,6 +44,19 @@ const Drawer = styled(MuiDrawer, {
 		'& .MuiDrawer-paper': closedMixin(theme),
 	}),
 }));
+
+// const Sidebar = ({ open }) => {
+// 	const theme = useTheme();
+
+// 	return (
+// 		<SwipeableDrawer open={open}>
+// 			<Toolbar />
+// 			<Box sx={{ overflow: 'auto' }}>
+// 				<MenuItems />
+// 			</Box>
+// 		</SwipeableDrawer>
+// 	);
+// };
 
 const Sidebar = ({ open }) => {
 	const theme = useTheme();

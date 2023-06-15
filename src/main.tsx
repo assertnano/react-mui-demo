@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 import CssBaseline from '@mui/material/CssBaseline';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
-		<CssBaseline />
-		<App />
+		<BrowserRouter>
+			<CssBaseline />
+			<App />
+		</BrowserRouter>
 	</React.StrictMode>
 );
