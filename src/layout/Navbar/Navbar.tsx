@@ -3,11 +3,8 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import { styled, useTheme } from '@mui/material';
+import { Avatar, Stack, styled, useTheme } from '@mui/material';
 import styles from './Navbar.module.scss';
-
-const drawerWidth = 240;
 
 interface AppBarProps extends MuiAppBarProps {
 	open?: boolean;
@@ -24,6 +21,9 @@ const AppBar = styled(MuiAppBar, {
 	color: '#000000',
 	backgroundColor: '#ffffff',
 	boxShadow: 'none',
+	height: '60px',
+	margin: '0px',
+	padding: '0px',
 }));
 
 const Navbar = ({ handleDrawerOpen }: NavbarProps) => {
@@ -37,12 +37,13 @@ const Navbar = ({ handleDrawerOpen }: NavbarProps) => {
 					edge="start"
 					aria-label="menu"
 					sx={{
+						height: '60px',
+						width: '50px',
 						color: '#ffffff',
 						mr: 2,
 						borderRadius: 0,
 						backgroundColor: theme.palette.primary.main,
-						padding: '1.3rem',
-						marginLeft: '-1.5rem',
+						marginLeft: '-24px',
 						'&:hover': {
 							backgroundColor: theme.palette.primary.dark,
 						},
@@ -52,10 +53,25 @@ const Navbar = ({ handleDrawerOpen }: NavbarProps) => {
 				>
 					<MenuIcon />
 				</IconButton>
-				<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-					News
-				</Typography>
-				<Button color="inherit">Login</Button>
+				<Stack direction="row" justifyContent="space-between" width="100%">
+					{/* //TODO esta bien asi el logo? */}
+					<div className={styles['header-brand']}>
+						<img src="/logo/logo-murchison.png" alt="LOGO" />
+					</div>
+					<Stack
+						direction="row"
+						spacing={2}
+						alignItems="center"
+						sx={{ p: 0.5 }}
+					>
+						<Avatar
+							alt="profile user"
+							// src={avatar1}
+							sx={{ width: 32, height: 32 }}
+						/>
+						<Typography variant="subtitle1">Nombre de usuario</Typography>
+					</Stack>
+				</Stack>
 			</Toolbar>
 		</AppBar>
 	);

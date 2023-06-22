@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box/Box';
 import List from '@mui/material/List/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
