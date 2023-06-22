@@ -3,7 +3,6 @@ import MenuItems from './MenuItems';
 import Box from '@mui/material/Box/Box';
 import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 
 const drawerWidth = 240;
 
@@ -58,13 +57,20 @@ const Drawer = styled(MuiDrawer, {
 // 	);
 // };
 
-const Sidebar = ({ open }) => {
+const Sidebar = ({ open }: { open: boolean }) => {
 	const theme = useTheme();
 
 	return (
-		<Drawer variant="permanent" open={open}>
+		<Drawer
+			variant="permanent"
+			open={open}
+			PaperProps={{
+				sx: { backgroundColor: theme.palette.primary.main, color: '#FFFFFF' },
+			}}
+		>
 			<Toolbar />
-			<Box sx={{ overflow: 'auto' }}>
+			{/* //TODO por que no funciona el sx en menuItems? Deberia ir color default? */}
+			<Box>
 				<MenuItems />
 			</Box>
 		</Drawer>

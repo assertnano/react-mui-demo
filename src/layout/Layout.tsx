@@ -6,7 +6,7 @@ import Box from '@mui/material/Box/Box';
 import { Outlet } from 'react-router-dom';
 import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
 
-import Navbar from './Navbar';
+import Navbar from './Navbar/Navbar';
 import Sidebar from './Sidebar';
 
 function Layout() {
