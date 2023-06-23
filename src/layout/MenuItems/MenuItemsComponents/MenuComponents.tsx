@@ -1,6 +1,6 @@
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { Typography } from '@mui/material';
-import { IMenuItem } from '../../menu-items.interface';
+import { IMenuItem } from '../menu-items.interface';
 
 // import { themeTypography } from "theme/typography";
 

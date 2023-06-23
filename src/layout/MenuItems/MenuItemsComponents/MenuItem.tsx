@@ -11,7 +11,7 @@ import {
 import { useTheme } from '@mui/material/styles';
 
 import { IconRender } from './MenuComponents';
-import { IMenuItem } from '../../menu-items.interface';
+import { IMenuItem } from '../menu-items.interface';
 import { useSidebarContext } from '../../context/useSidebarContext';
 import { ACTION_TYPES } from '../../context/constants';
 

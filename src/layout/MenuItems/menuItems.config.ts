@@ -1,9 +1,4 @@
 // assets
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import FontDownloadIcon from '@mui/icons-material/FontDownload';
-import PaletteIcon from '@mui/icons-material/Palette';
-import DeblurIcon from '@mui/icons-material/Deblur';
-import WindPowerIcon from '@mui/icons-material/WindPower';
 import { IMenuItem, IMenuItemsGroup } from './menu-items.interface';
 
 //nano
@@ -12,13 +7,13 @@ import {
 	InventoryIcon,
 	AccountTreeIcon,
 	ReceiptIcon,
-} from '../assets/icons';
+} from '../../assets/icons';
 
 // ==============================|| DASHBOARD MENU ITEMS ||============================== //
 
 const dashboard: IMenuItem = {
 	id: 'dashboard',
-	// title: 'Dashboard',
+	title: 'Dashboard',
 	type: 'group',
 	children: [
 		{

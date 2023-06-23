@@ -1,4 +1,4 @@
-import { IMenuItemsGroup } from '../menu-items.interface';
+import { IMenuItemsGroup } from './menu-items.interface';
 
 import { MenuItemError } from './MenuItemsComponents/MenuComponents';
 import MenuItemGroup from './MenuItemsComponents/MenuItemGroup';

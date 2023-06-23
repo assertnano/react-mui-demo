@@ -8,7 +8,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from './MenuItem';
 import { IconRender } from './MenuComponents';
 import { ListItemButton, ListItemIcon } from '@mui/material';
-import { IMenuItem } from '../../menu-items.interface';
+import { IMenuItem } from '../menu-items.interface';
 
 export default function ContextualMenu({ menuItem }: { menuItem?: IMenuItem }) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);

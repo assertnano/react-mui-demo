@@ -3,7 +3,7 @@ import Box from '@mui/material/Box/Box';
 import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import { MenuItemsNestedList } from './MenuItems/MenuItems';
-import menuItems from './menuItems.config';
+import menuItems from './MenuItems/menuItems.config';
 
 const drawerWidth = 240;
 
