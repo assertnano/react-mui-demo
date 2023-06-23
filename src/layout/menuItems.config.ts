@@ -56,7 +56,7 @@ const dashboard: IMenuItem = {
 		{
 			id: 'facturacion',
 			title: 'Facturación',
-			type: 'item',
+			type: 'collapse',
 			icon: ReceiptIcon,
 			url: '/facturacion',
 			breadcrumbs: false,

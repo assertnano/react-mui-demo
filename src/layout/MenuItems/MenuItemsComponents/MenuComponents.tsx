@@ -18,7 +18,7 @@ export function IconRender({
 	const Icon = icon;
 
 	const iconRender = icon ? (
-		<Icon sx={{ color: '#FFFFFF' }} />
+		<Icon size="large" sx={{ color: '#FFFFFF' }} />
 	) : (
 		<FiberManualRecordIcon
 			sx={{

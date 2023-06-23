@@ -3,8 +3,8 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
-import { Avatar, Stack, styled, useTheme } from '@mui/material';
-import styles from './Navbar.module.scss';
+import { Avatar, Box, Stack, styled, useTheme } from '@mui/material';
+import Logo from '../../../public/logo/logo-murchison.png';
 
 //TODO como puedo utilizar ruta absoluta
 import {
@@ -29,7 +29,6 @@ const AppBar = styled(MuiAppBar, {
 	color: '#000000',
 	backgroundColor: '#ffffff',
 	boxShadow: 'none',
-	height: '60px',
 	margin: '0px',
 	padding: '0px',
 }));
@@ -46,7 +45,7 @@ const Navbar = ({ handleDrawerOpen }: NavbarProps) => {
 					edge="start"
 					aria-label="menu"
 					sx={{
-						height: '60px',
+						height: '64px',
 						width: '50px',
 						color: '#ffffff',
 						mr: 2,
@@ -62,10 +61,13 @@ const Navbar = ({ handleDrawerOpen }: NavbarProps) => {
 					<MenuIcon />
 				</IconButton>
 				<Stack direction="row" justifyContent="space-between" width="100%">
-					{/* //TODO esta bien asi el logo? */}
-					<div className={styles['header-brand']}>
-						<img src="/logo/logo-murchison.png" alt="LOGO" />
-					</div>
+					<Box
+						component="img"
+						src="/logo/logo-murchison.png"
+						alt="LOGO"
+						sx={{ height: '45px' }}
+					/>
+
 					<Stack
 						direction="row"
 						spacing={2}
@@ -73,20 +75,19 @@ const Navbar = ({ handleDrawerOpen }: NavbarProps) => {
 						sx={{ p: 0.5 }}
 					>
 						<IconButton
+							size="small"
 							sx={{
 								border: '2px solid',
-								width: 32,
-								height: 32,
 								color: theme.palette.secondary.main,
 							}}
 						>
 							<SearchIcon />
 						</IconButton>
 						<IconButton
+							size="small"
 							sx={{
 								border: '2px solid',
-								width: 32,
-								height: 32,
+
 								color: theme.palette.secondary.main,
 							}}
 						>
@@ -96,8 +97,6 @@ const Navbar = ({ handleDrawerOpen }: NavbarProps) => {
 							alt="profile user"
 							// src={avatar1}
 							sx={{
-								width: 32,
-								height: 32,
 								backgroundColor: theme.palette.secondary.main,
 							}}
 						/>
