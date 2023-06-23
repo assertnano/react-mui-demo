@@ -23,7 +23,15 @@ function Layout() {
 				{/* SIDEBAR */}
 				<Sidebar open={open} />
 				{/* MAIN */}
-				<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+				<Box
+					component="main"
+					sx={{
+						flexGrow: 1,
+						p: 3,
+						backgroundColor: 'whitesmoke',
+						heigth: '100%',
+					}}
+				>
 					<Toolbar />
 					<Outlet />
 				</Box>

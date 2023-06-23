@@ -42,19 +42,6 @@ const Drawer = styled(MuiDrawer, {
 	}),
 }));
 
-// const Sidebar = ({ open }) => {
-// 	const theme = useTheme();
-
-// 	return (
-// 		<SwipeableDrawer open={open}>
-// 			<Toolbar />
-// 			<Box sx={{ overflow: 'auto' }}>
-// 				<MenuItems />
-// 			</Box>
-// 		</SwipeableDrawer>
-// 	);
-// };
-
 const Sidebar = ({ open }: { open: boolean }) => {
 	const theme = useTheme();
 

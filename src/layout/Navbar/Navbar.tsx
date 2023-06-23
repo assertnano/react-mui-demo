@@ -1,10 +1,18 @@
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+// import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
 import { Avatar, Stack, styled, useTheme } from '@mui/material';
 import styles from './Navbar.module.scss';
+
+//TODO como puedo utilizar ruta absoluta
+import {
+	MenuIcon,
+	SearchIcon,
+	QuestionMarkIcon,
+	AccountCircleIcon,
+} from '../../assets/icons';
 
 interface AppBarProps extends MuiAppBarProps {
 	open?: boolean;
@@ -33,6 +41,7 @@ const Navbar = ({ handleDrawerOpen }: NavbarProps) => {
 		<AppBar position="fixed">
 			<Toolbar>
 				<IconButton
+					//TODO no pude agrandar el icono
 					size="large"
 					edge="start"
 					aria-label="menu"
@@ -47,7 +56,6 @@ const Navbar = ({ handleDrawerOpen }: NavbarProps) => {
 						'&:hover': {
 							backgroundColor: theme.palette.primary.dark,
 						},
-						// padding: '20px',
 					}}
 					onClick={handleDrawerOpen}
 				>
@@ -64,10 +72,34 @@ const Navbar = ({ handleDrawerOpen }: NavbarProps) => {
 						alignItems="center"
 						sx={{ p: 0.5 }}
 					>
+						<IconButton
+							sx={{
+								border: '2px solid',
+								width: 32,
+								height: 32,
+								color: theme.palette.secondary.main,
+							}}
+						>
+							<SearchIcon />
+						</IconButton>
+						<IconButton
+							sx={{
+								border: '2px solid',
+								width: 32,
+								height: 32,
+								color: theme.palette.secondary.main,
+							}}
+						>
+							<QuestionMarkIcon />
+						</IconButton>
 						<Avatar
 							alt="profile user"
 							// src={avatar1}
-							sx={{ width: 32, height: 32 }}
+							sx={{
+								width: 32,
+								height: 32,
+								backgroundColor: theme.palette.secondary.main,
+							}}
 						/>
 						<Typography variant="subtitle1">Nombre de usuario</Typography>
 					</Stack>
