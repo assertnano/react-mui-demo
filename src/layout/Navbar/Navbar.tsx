@@ -41,7 +41,6 @@ const Navbar = ({ handleDrawerOpen }: NavbarProps) => {
 			<Toolbar>
 				<IconButton
 					//TODO no pude agrandar el icono
-					size="large"
 					edge="start"
 					aria-label="menu"
 					sx={{

@@ -18,11 +18,11 @@ export function IconRender({
 	const Icon = icon;
 
 	const iconRender = icon ? (
-		<Icon size="large" sx={{ color: '#FFFFFF' }} />
+		<Icon sx={{ color: 'white' }} />
 	) : (
 		<FiberManualRecordIcon
 			sx={{
-				color: '#FFFFFF',
+				color: 'white',
 				// display: 'none',
 				width:
 					isActive && isActive.findIndex((id: any) => id === item?.id) > -1

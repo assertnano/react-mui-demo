@@ -32,7 +32,10 @@ const MenuItemGroup = ({ item, open }: Props): JSX.Element => {
 	return (
 		<>
 			<List
-				sx={{ width: '100%', maxWidth: 360 }}
+				sx={{
+					width: '100%',
+					padding: 0,
+				}}
 				component="nav"
 				aria-labelledby="nested-list-subheader"
 				subheader={
