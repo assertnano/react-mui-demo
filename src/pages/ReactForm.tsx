@@ -70,12 +70,40 @@ const ReactForm = () => {
           <Controller
             render={({ field }) => (
               <Select {...field}>
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem value={10}>Calzado</MenuItem>
+                <MenuItem value={20}>Cabeza</MenuItem>
+                <MenuItem value={30}>Nada</MenuItem>
               </Select>
             )}
-            name='Select'
+            name='TipoDeAccesorio'
+            control={control}
+          />
+        </section>
+        <section>
+          <label>MUI Select</label>
+          <Controller
+            render={({ field }) => (
+              <Select {...field}>
+                <MenuItem value={1}>gorra</MenuItem>
+                <MenuItem value={2}>sombrero</MenuItem>
+                <MenuItem value={3}>boina</MenuItem>
+              </Select>
+            )}
+            name='AccesorioCabeza'
+            control={control}
+          />
+        </section>
+        <section>
+          <label>MUI Select</label>
+          <Controller
+            render={({ field }) => (
+              <Select {...field}>
+                <MenuItem value={4}>chancleta</MenuItem>
+                <MenuItem value={5}>alpargata</MenuItem>
+                <MenuItem value={6}>zapato</MenuItem>
+              </Select>
+            )}
+            name='AccesorioCalzado'
             control={control}
           />
         </section>

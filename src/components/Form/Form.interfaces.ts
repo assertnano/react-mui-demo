@@ -7,7 +7,9 @@ const radioGroupOptions = ['female', 'male'] as const;
 export type FormValues = {
   Native: string;
   TextField: string;
-  Select: number;
+  TipoDeAccesorio: number;
+  AccesorioCabeza: number;
+  AccesorioCalzado: number;
   Checkbox: boolean;
   switch: boolean;
   RadioGroup: RadioGroupOption;
