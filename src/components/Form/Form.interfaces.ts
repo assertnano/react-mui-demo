@@ -4,9 +4,14 @@ type NumberRange = [number, number];
 
 const radioGroupOptions = ['female', 'male'] as const;
 
+type SelectValue = number | '';
+
 export type FormValues = {
   Native: string;
   TextField: string;
+  tipoAccesorioId: number;
+  sombreroId: SelectValue;
+  calzadoId: SelectValue;
   TipoDeAccesorio: number;
   AccesorioCabeza: number;
   AccesorioCalzado: number;

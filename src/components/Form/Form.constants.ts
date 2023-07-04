@@ -4,7 +4,9 @@ import { FormValues } from './Form.interfaces';
 export const defaultValues: DefaultValues<FormValues> = {
   Native: '',
   TextField: '',
-  Select: 10,
+  tipoAccesorioId: 1,
+  sombreroId: "",
+  calzadoId: "",
   Checkbox: false,
   switch: false,
   RadioGroup: 'female',

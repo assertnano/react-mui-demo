@@ -1,18 +1,12 @@
-import {
-  Checkbox,
-  FormControlLabel,
-  MenuItem,
-  Radio,
-  RadioGroup,
-  Select,
-  Slider,
-  Switch,
-  TextField,
-} from '@mui/material';
-import { DefaultValues, useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { Checkbox, FormControlLabel, Radio, RadioGroup, Slider, Stack, Switch, TextField } from '@mui/material';
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { FormValues } from '../components/Form/Form.interfaces';
 import { defaultValues } from '../components/Form/Form.constants';
 import FormButtonsResult from '../components/Form/FormButtonsResult';
+import { calzados, sombreros, tiposAccesorio } from '../database/selects';
+import FormSelect from '../components/Form/FormSelect';
+import { useEffect } from 'react';
+import Header from './Header';
 
 let renderCount = 0;
 
@@ -22,19 +16,31 @@ const ReactForm = () => {
     register,
     reset,
     control,
+    watch,
+    setValue,
     formState: { errors },
-  } = useForm<FormValues>({
-    defaultValues,
-  });
+  } = useForm<FormValues>({ defaultValues });
 
   const onSubmit: SubmitHandler<FormValues> = data => alert(JSON.stringify(data));
   renderCount++;
 
-  console.log(errors);
+  console.log('Errors: ', errors);
+
+  useEffect(() => {
+    const tipoAccesorioId = watch('tipoAccesorioId');
+    if (tipoAccesorioId === 2) {
+      setValue('calzadoId', 23);
+      setValue('sombreroId', '');
+    } else if (tipoAccesorioId === 1) {
+      setValue('calzadoId', '');
+      setValue('sombreroId', 12);
+    }
+  }, [watch('tipoAccesorioId')]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='form'>
-      <h1>{renderCount}</h1>
+      <Header renderCount={renderCount} />
+
       <div className='container'>
         <section>
           <label>Native Input:</label>
@@ -65,55 +71,21 @@ const ReactForm = () => {
           <Controller render={({ field }) => <TextField {...field} />} name='TextField' control={control} />
         </section>
 
-        <section>
-          <label>MUI Select</label>
-          <Controller
-            render={({ field }) => (
-              <Select {...field}>
-                <MenuItem value={10}>Calzado</MenuItem>
-                <MenuItem value={20}>Cabeza</MenuItem>
-                <MenuItem value={30}>Nada</MenuItem>
-              </Select>
-            )}
-            name='TipoDeAccesorio'
-            control={control}
-          />
-        </section>
-        <section>
-          <label>MUI Select</label>
-          <Controller
-            render={({ field }) => (
-              <Select {...field}>
-                <MenuItem value={1}>gorra</MenuItem>
-                <MenuItem value={2}>sombrero</MenuItem>
-                <MenuItem value={3}>boina</MenuItem>
-              </Select>
-            )}
-            name='AccesorioCabeza'
-            control={control}
-          />
-        </section>
-        <section>
-          <label>MUI Select</label>
-          <Controller
-            render={({ field }) => (
-              <Select {...field}>
-                <MenuItem value={4}>chancleta</MenuItem>
-                <MenuItem value={5}>alpargata</MenuItem>
-                <MenuItem value={6}>zapato</MenuItem>
-              </Select>
-            )}
-            name='AccesorioCalzado'
-            control={control}
-          />
-        </section>
+        {/* SELECTS */}
+        <Stack direction='row' spacing={2} my={8}>
+          <FormSelect control={control} name='tipoAccesorioId' options={tiposAccesorio} label='Tipo de Accesorio' />
+
+          <FormSelect control={control} name='sombreroId' options={sombreros} label='Sombreros' />
+
+          <FormSelect control={control} name='calzadoId' options={calzados} label='Calzados' />
+        </Stack>
 
         <section>
           <label>MUI Switch</label>
           <Controller name='switch' control={control} render={({ field }) => <Switch {...field} />} />
         </section>
 
-        <section>
+        {/* <section>
           <label>MUI Slider</label>
           <Controller
             name='MUI_Slider'
@@ -131,7 +103,7 @@ const ReactForm = () => {
               />
             )}
           />
-        </section>
+        </section> */}
 
         <section>
           <label>MUI autocomplete</label>
@@ -139,7 +111,7 @@ const ReactForm = () => {
         </section>
       </div>
 
-      <FormButtonsResult {...{ reset }} />
+      <FormButtonsResult {...{ reset }} defaultValues={defaultValues} />
     </form>
   );
 };
